@@ -70,12 +70,12 @@ main {
     display: grid;
     grid-template-columns: 1em 1fr 1em;
     grid-template-areas:
-        ".... .... ...."
-        ".... blog1 ...."
-        ".... blog2 ...."
-        ".... blog3 ...."
-        ".... more ...."
-        ".... .... ....";
+        "..... ..... ....."
+        "..... blog1 ....."
+        "..... blog2 ....."
+        "..... blog3 ....."
+        "..... more  ....."
+        "..... ..... .....";
     gap: 2em 0;
 }
 
@@ -115,7 +115,7 @@ img {
         grid-template-areas:
             "..... ..... ....."
             "blog1 blog2 blog3"
-            "..... more ....."
+            "..... more  ....."
             "..... ..... .....";
         gap: 1em;
         padding: 1em;
