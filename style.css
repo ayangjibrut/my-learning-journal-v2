@@ -8,38 +8,41 @@ body {
     font-family: "Noto Sans", sans-serif;
 }
 
-.site-header,
+.site-header-wrapper,
 nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em;
+}
+
+.logo-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: .75em;
 }
 
 .logo-img {
     max-width: 30px;
     max-height: 30px;
-    margin-right: .75em;
+    margin-left: .5em;
 }
 
 .logo-title {
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: .85rem;
-}
-
-nav {
-    margin: 0 0 0 auto;
+    margin-left: .5em;
 }
 
 ul {
-    display: inline-flex;
+    display: flex;
 }
 
 li {
     font-size: .85rem;
     list-style-type: none;
-    margin-left: .75em;
+    padding-left: .5em;
     cursor: pointer;
 }
 
@@ -76,9 +79,16 @@ main {
         "..... blog1 ....."
         "..... blog2 ....."
         "..... blog3 ....."
+        "..... arti1 ....."
+        "..... arti2 ....."
+        "..... arti3 ....."
         "..... more  ....."
         "..... ..... .....";
-    gap: 2em 0;
+    gap: 1em 0;
+}
+
+.blog {
+    margin-bottom: 1em;
 }
 
 .blog-one {
@@ -93,21 +103,53 @@ main {
     grid-area: blog3;
 }
 
-.more {
-    grid-area: more;
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: bold;
-    cursor: pointer;
+.article-one {
+    grid-area: arti1;
 }
 
-img {
-    width: 100%;
-    border-radius: .25em;
+.article-two {
+    grid-area: arti2;
+}
+
+.article-three {
+    grid-area: arti3;
+}
+
+.more {
+    grid-area: more;
+}
+
+.more p {
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+
+footer {
+    text-align: center;
+    background-color: #202020;
+    color: whitesmoke;
+    padding: 1.5em 0;
+}
+
+footer h4 {
+    font-size: .85rem;
+}
+
+footer p {
+    font-size: .75rem;
 }
 
 @media (min-width: 768px) {
-    body {
+    .site-header {
+        box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.05);
+        background-color: white;
+    }
+    
+    .site-header-wrapper,
+    .main-header,
+    main {
         width: 80%;
         margin: 0 auto;
     }
@@ -117,18 +159,19 @@ img {
     }
 
     main {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: .5em repeat(3, 1fr) .5em;
         grid-template-areas:
-            "..... ..... ....."
-            "blog1 blog2 blog3"
-            "..... more  ....."
-            "..... ..... .....";
+            "..... ..... ..... ..... ....."
+            "..... blog1 blog2 blog3 ....."
+            "..... arti1 arti2 arti3 ....."
+            "..... ..... ..... ..... ....."
+            "..... ..... more  ..... ....."
+            "..... ..... ..... ..... .....";
         gap: 1em;
-        padding: 1em;
     }
 
     .header-text-wrapper {
-        padding: 0 1.5em 2em;
+        padding: 0 2.5em 2em;
     }
 
     h1 {
@@ -139,4 +182,13 @@ img {
     li {
         font-size: initial;
     }
+
+    footer {
+        min-width: 100%;
+    }
+}
+
+img.blog-article {
+    width: 100%;
+    border-radius: .25em;
 }
